@@ -6,9 +6,9 @@ services: # ahora se indican los servicios por el orden en que se quiere que se 
     image: pgarciarubio/p2gps:web
     deploy:
       replicas: 1
-      resources:
-        limits:
-          cpus: "0.25"
+      #resources:
+        #limits:
+          #cpus: "0.25"
           #memory: 300M
       restart_policy:
         condition: on-failure
@@ -18,9 +18,9 @@ services: # ahora se indican los servicios por el orden en que se quiere que se 
     image: pgarciarubio/p2gps:db
     deploy:
       replicas: 1 # para escabilidad del servicio.
-      resources:
-        limits:
-          cpus: "0.15"
+      #resources:
+        #limits:
+          #cpus: "0.15"
           #memory: 200M
       restart_policy:
         condition: on-failure #reinicar el contenedor si falla
@@ -35,9 +35,9 @@ services: # ahora se indican los servicios por el orden en que se quiere que se 
       - "mongo" #le pasamos al servicio order la IP del servicio mongo
     deploy:
       replicas: 1
-      resources:
-        limits:
-          cpus: "0.3"
+      #resources:
+        #limits:
+          #cpus: "0.3"
           #memory: 500M
       restart_policy:
         condition: on-failure
